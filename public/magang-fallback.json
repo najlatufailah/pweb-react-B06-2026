@@ -1,0 +1,20 @@
+{
+  "job-count": 15,
+  "jobs": [
+    { "id": 1001, "title": "Frontend Intern", "company_name": "Nusantara Cloud", "category": "Software Development", "candidate_required_location": "Surabaya (Hybrid)", "salary": "Rp 4.500.000", "tags": ["React", "TypeScript", "CSS"] },
+    { "id": 1002, "title": "Full-Stack Web Developer Intern", "company_name": "Garuda FinTech", "category": "Software Development", "candidate_required_location": "Jakarta (Remote)", "salary": "Rp 5.500.000", "tags": ["React", "TypeScript", "PostgreSQL", "Express", "Prisma"] },
+    { "id": 1003, "title": "Software Engineer Intern - Web Platform", "company_name": "Bintang Commerce", "category": "Software Development", "candidate_required_location": "Indonesia (Remote)", "salary": "Rp 6.000.000", "tags": ["React", "TypeScript", "CSS", "Git", "Testing"] },
+    { "id": 1004, "title": "DevOps & Cloud Infrastructure Intern", "company_name": "AwanMerdeka Cloud", "category": "DevOps", "candidate_required_location": "Indonesia (Remote)", "salary": "Rp 5.200.000", "tags": ["Git", "PostgreSQL", "Linux", "Docker", "CI/CD"] },
+    { "id": 1005, "title": "Backend Developer Intern", "company_name": "Kopi Digital", "category": "Software Development", "candidate_required_location": "Bandung (Hybrid)", "salary": "Rp 4.000.000", "tags": ["Node.js", "Express", "PostgreSQL", "REST API", "Git"] },
+    { "id": 1006, "title": "Mobile Developer Intern (Flutter)", "company_name": "Lintas Aplikasi", "category": "Mobile Development", "candidate_required_location": "Yogyakarta (Onsite)", "salary": "Rp 3.800.000", "tags": ["Flutter", "Dart", "Firebase", "Git"] },
+    { "id": 1007, "title": "UI Engineer Intern", "company_name": "Pixel Nusantara", "category": "Software Development", "candidate_required_location": "Surabaya (Onsite)", "salary": "Rp 3.500.000", "tags": ["React", "CSS", "Tailwind CSS", "Figma"] },
+    { "id": 1008, "title": "Data Analyst Intern", "company_name": "Data Karsa", "category": "Data", "candidate_required_location": "Jakarta (Hybrid)", "salary": "Rp 4.800.000", "tags": ["Python", "SQL", "Excel", "Tableau"] },
+    { "id": 1009, "title": "QA Automation Intern", "company_name": "Mitra Teknologi Solusi", "category": "Quality Assurance", "candidate_required_location": "Malang (Hybrid)", "salary": "Rp 3.700.000", "tags": ["JavaScript", "Cypress", "Testing", "Git"] },
+    { "id": 1010, "title": "Machine Learning Intern", "company_name": "Sinergi AI Labs", "category": "Data", "candidate_required_location": "Jakarta (Remote)", "salary": "Rp 6.500.000", "tags": ["Python", "TensorFlow", "Pandas", "Docker"] },
+    { "id": 1011, "title": "Web Developer Intern (Laravel)", "company_name": "Warung Teknologi", "category": "Software Development", "candidate_required_location": "Semarang (Onsite)", "salary": "Rp 3.200.000", "tags": ["PHP", "Laravel", "MySQL", "Git"] },
+    { "id": 1012, "title": "Frontend Developer Intern", "company_name": "Tokoku Digital", "category": "Software Development", "candidate_required_location": "Indonesia (Remote)", "salary": "Rp 4.200.000", "tags": ["React", "JavaScript", "CSS", "Git", "REST API"] },
+    { "id": 1013, "title": "Cybersecurity Intern", "company_name": "Benteng Siber", "category": "Security", "candidate_required_location": "Jakarta (Onsite)", "salary": "Rp 5.000.000", "tags": ["Linux", "Networking", "Python", "Docker"] },
+    { "id": 1014, "title": "Backend Engineer Intern (Go)", "company_name": "Samudra Logistik", "category": "Software Development", "candidate_required_location": "Surabaya (Hybrid)", "salary": "Rp 5.800.000", "tags": ["Go", "PostgreSQL", "Docker", "REST API", "Git"] },
+    { "id": 1015, "title": "Next.js Developer Intern", "company_name": "Cakrawala Studio", "category": "Software Development", "candidate_required_location": "Bali (Remote)", "salary": "Rp 4.600.000", "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS"] }
+  ]
+}
