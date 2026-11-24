@@ -1,6 +1,6 @@
 # Orang 1 - Eksplorasi Lowongan dan Profil Skill
 
-Branch belajar, bukan aplikasi standalone. Untuk menjalankan website, gunakan `integration/final` (snapshot acuan: `cecedff`). File bersama tetap disertakan sebagai referensi integrasi; jangan menganggap seluruh isinya sebagai kontribusi individu. Gabungkan puzzle dengan menyalin file sesuai path, bukan dengan merge Git biasa.
+Branch belajar, bukan aplikasi standalone. Untuk menjalankan website, gunakan `integration/final` (snapshot acuan: `cecedff`). Branch ini hanya memuat delapan file tanggung jawab dan panduan ini. File bersama, konfigurasi, dan dependency tersedia di `integration/final`. Untuk rekonstruksi, salin file tanggung jawab ketiga anggota ke baseline file bersama dari final, bukan merge Git biasa.
 
 ## File tanggung jawab
 
@@ -13,7 +13,7 @@ Branch belajar, bukan aplikasi standalone. Untuk menjalankan website, gunakan `i
 - `src/components/JobExplorer.css`: tampilan eksplorasi.
 - `public/magang-fallback.json`: 15 lowongan lokal.
 
-## File bersama yang perlu dibaca
+## File bersama yang perlu dibaca (buka di integration/final)
 
 `src/App.tsx`: state `kaptenSkills`, `applications`, dan fungsi `saveWishlist`; `src/types/index.ts`: JobListing dan Application. Persistensi melalui `useLocalStorage` (bagian orang 2).
 
