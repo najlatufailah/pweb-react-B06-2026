@@ -8,11 +8,17 @@ import JobExplorer from './components/JobExplorer';
 import ApplicationForm from './components/ApplicationForm';
 import ApplicationPipeline from './components/ApplicationPipeline';
 import ApplicationDetail from './components/ApplicationDetail';
+import Dashboard from './components/Dashboard';
+import Navbar, { type Page } from './components/Navbar';
+import InterviewTimer from './components/InterviewTimer';
+import OfferComparator from './components/OfferComparator';
 import './App.css';
 
 export default function App() {
   const [applications, setApplications] = useLocalStorage<Application[]>('applications', []);
   const [kaptenSkills, setKaptenSkills] = useLocalStorage<string[]>('kaptenSkills', ['React', 'TypeScript', 'CSS']);
+  const [page, setPage] = useState<Page>('explore');
+  const [showForm, setShowForm] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [deleted, setDeleted] = useState<{ app: Application; index: number } | null>(null);
   const [message, setMessage] = useState('');
@@ -84,12 +90,30 @@ export default function App() {
 
   return (
     <main className="app">
-      <header className="app-header"><h1>Aku Mw Magang</h1><p>Kelola perjalanan magang Kapten.</p></header>
-      <h2>Eksplorasi Lowongan</h2>
-      <JobExplorer kaptenSkills={kaptenSkills} onSkillsChange={setKaptenSkills} applications={applications} onSaveToWishlist={saveWishlist} />
-      <ApplicationForm applications={applications} onAdd={addApplication} />
-      <ApplicationPipeline applications={applications} kaptenSkills={kaptenSkills} onOpen={setSelectedId} onDelete={deleteApplication} onSimulate={simulate} now={now} />
-      {selected && <ApplicationDetail key={selected.id} app={selected} onUpdate={updateApplication} onClose={() => setSelectedId(null)} />}
+      <Navbar page={page} onChangePage={next => { setPage(next); setShowForm(false); }} onAdd={() => setShowForm(prev => !prev)}
+        total={applications.length} offers={applications.filter(app => app.status === 'OFFER').length} />
+      <Dashboard applications={applications} now={now} />
+
+      {showForm && <div>
+        <div className="form-close"><button type="button" onClick={() => setShowForm(false)}>Tutup Form</button></div>
+        <ApplicationForm applications={applications} onAdd={app => {
+          addApplication(app);
+          setShowForm(false);
+          setPage('pipeline');
+        }} />
+      </div>}
+
+      {page === 'explore' && <>
+        <h2 className="page-title">Eksplorasi Lowongan</h2>
+        <JobExplorer kaptenSkills={kaptenSkills} onSkillsChange={setKaptenSkills} applications={applications} onSaveToWishlist={saveWishlist} />
+      </>}
+      {page === 'pipeline' && <ApplicationPipeline applications={applications} kaptenSkills={kaptenSkills}
+        onOpen={setSelectedId} onDelete={deleteApplication} onSimulate={simulate} now={now} />}
+      {page === 'offers' && <OfferComparator applications={applications} kaptenSkills={kaptenSkills} />}
+
+      {selected && <ApplicationDetail key={selected.id} app={selected} onUpdate={updateApplication} onClose={() => setSelectedId(null)}>
+        <InterviewTimer />
+      </ApplicationDetail>}
       {deleted && <div className="toast" role="status"><span>{deleted.app.company} - {deleted.app.role} dihapus.</span><button onClick={undoDelete}>Undo</button></div>}
       {message && <div className="toast" role="alert"><span>{message}</span><button onClick={() => setMessage('')}>Tutup</button></div>}
     </main>

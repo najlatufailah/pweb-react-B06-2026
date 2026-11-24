@@ -2,7 +2,6 @@ import { useState } from 'react';
 import type { Application, ApplicationStatus } from '../types';
 import { calculateSkillMatch, getMatchLevel } from '../utils/skillMatcher';
 import { isRawanGhosting } from '../utils/ghostingChecker';
-import { findInterviewConflicts } from '../utils/interviewConflict';
 import { transitions } from '../utils/stateMachine';
 
 interface Props {
@@ -19,8 +18,6 @@ export default function ApplicationPipeline({ applications, kaptenSkills, onOpen
   const [status, setStatus] = useState('ALL');
   const [ghostingOnly, setGhostingOnly] = useState(false);
   const [sort, setSort] = useState('newest');
-  // Bentrok dihitung dari semua lamaran, sebelum filter.
-  const conflicts = findInterviewConflicts(applications);
   const query = search.trim().toLowerCase();
   const visible = applications.filter(app =>
     (app.company.toLowerCase().includes(query) || app.role.toLowerCase().includes(query)) &&
@@ -40,9 +37,6 @@ export default function ApplicationPipeline({ applications, kaptenSkills, onOpen
   return (
     <section className="panel">
       <h2>War Room Lamaran</h2>
-      {conflicts.length > 0 && <div className="warning" role="alert"><strong>Peringatan: Bentrok Jadwal Interview</strong>
-        {conflicts.map(([a, b]) => <p key={a.id + b.id}>{a.company} ({a.role}) dan {b.company} ({b.role}) berselisih kurang dari 60 menit.</p>)}
-      </div>}
       <div className="actions filters">
         <input type="search" aria-label="Cari lamaran" placeholder="Cari perusahaan / posisi" value={search} onChange={e => setSearch(e.target.value)} />
         <select aria-label="Filter status" value={status} onChange={e => setStatus(e.target.value)}><option value="ALL">Semua Status</option>
