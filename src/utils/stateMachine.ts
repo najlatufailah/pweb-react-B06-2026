@@ -5,7 +5,7 @@ export const transitions: Record<ApplicationStatus, ApplicationStatus[]> = {
   WISHLIST: ['APPLIED'],
   APPLIED: ['SCREENING', 'REJECTED', 'GHOSTED'],
   SCREENING: ['INTERVIEW', 'REJECTED', 'GHOSTED'],
-  INTERVIEW: ['OFFER', 'REJECTED'],
+  INTERVIEW: ['OFFER', 'REJECTED', 'GHOSTED'],
   OFFER: [],
   REJECTED: [],
   GHOSTED: ['SCREENING'],
