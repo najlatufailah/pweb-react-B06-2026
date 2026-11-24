@@ -1,6 +1,6 @@
 # Orang 3 - Dashboard, Interview Timer dan Offer Comparator
 
-Branch belajar, bukan aplikasi standalone. Jalankan website dan latihan live-coding dari `integration/final` (snapshot acuan: `cecedff`). File bersama tetap disertakan sebagai referensi integrasi, bukan klaim kontribusi individu. Gabungkan puzzle dengan menyalin file sesuai path, bukan merge Git biasa.
+Branch belajar, bukan aplikasi standalone. Jalankan website dan latihan live-coding dari `integration/final` (snapshot acuan: `cecedff`). Branch ini hanya memuat tujuh file tanggung jawab dan panduan ini. File bersama, konfigurasi, dan dependency tersedia di `integration/final`. Untuk rekonstruksi, salin file tanggung jawab ketiga anggota ke baseline file bersama dari final, bukan merge Git biasa.
 
 ## File tanggung jawab
 
@@ -12,7 +12,7 @@ Branch belajar, bukan aplikasi standalone. Jalankan website dan latihan live-cod
 - `src/components/OfferComparator.tsx`: pilih dua offer berbeda, skor dan rekomendasi.
 - `src/components/Navbar.tsx`: navigasi aplikasi.
 
-## File bersama yang perlu dipahami
+## File bersama yang perlu dipahami (buka di integration/final)
 
 `src/App.tsx`: state halaman, conditional rendering, props Dashboard/Navbar/OfferComparator dan timer sebagai children ApplicationDetail. `src/App.css`: layout dan responsive CSS. `src/types/index.ts`: Application dan WorkMode. Statistik dan comparator memakai helper orang 1/2 dari aplikasi final; helper tersebut sengaja tidak diduplikasi di branch ini.
 
